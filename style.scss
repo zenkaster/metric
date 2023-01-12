@@ -1,0 +1,434 @@
+@use 'mixin.scss';
+@use 'var.scss';
+*{
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0;
+    padding:0;
+}
+.container{
+    width: 1440px;
+    margin: auto;
+    @include mixin.flex(unset, center);
+    flex-flow: column wrap;
+    border: 2px solid black;
+    box-sizing: content-box;
+}
+
+
+.header{
+    @include mixin.width(1440,940);
+    @include mixin.flex(space-between, center);
+    padding: 26px 0;
+    line-height: 22px;
+ 
+    h1{
+        overflow: hidden;
+        font-family: 'Roboto Slab';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 27px;
+        color: #1C1C1C;    
+    }
+
+    nav{
+        @include mixin.width(940,377);
+        
+        .nav-bar{
+            @include mixin.flex(space-evenly, center);
+            gap: 34px;
+            
+            li{
+                list-style-type: none;
+                
+                a{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    color: #222222;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+.wrapper-main{
+    width: 100%;
+    @include mixin.flex(center,unset);
+    background-image: url(../img/IMAGEbg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    // background-position: center;
+}
+.main{
+    @include mixin.flex(unset,center);
+    flex-flow: column wrap;
+    .info-block{
+        @include mixin.flex(center,start);
+        @include mixin.width(1440,960);   
+        // margin: 70px 0 ;
+        gap: 10px;
+        padding: 70px 0 66px 0;
+    }
+    .info-text{
+        @include mixin.width(960,480);
+        @include mixin.flex(space-between,center);
+        flex-flow: column wrap;
+        padding-left: 10px;
+        h1{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 38px;
+            line-height: 44px;
+            color: #FFFFFF;
+            overflow: hidden;
+            margin-bottom: 21px;
+        }
+        p{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: #FFFFFF;
+            margin-bottom: 25px;
+        }
+        .btns{
+            width: 100%;
+            .sign{
+                background: #000000;
+                box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
+                border-radius: 3px;
+                height: 48px;
+                font-family: 'Roboto Slab';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                text-align: center;
+                color: #FFFFFF;
+                @include mixin.width(480,110);
+                cursor: pointer;
+            }
+            .learn{
+                font-family: 'Roboto Slab';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                text-align: center;
+                color: #000000;        
+                height: 48px;
+                @include mixin.width(480,110);
+                background-color: transparent;
+                border: 0;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .press{
+        width: 100%;
+        background-color: rgba(62, 92, 80, 1);
+        @include mixin.flex(unset,center);
+        flex-flow: column wrap;
+        h6{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.31);
+            margin: 26px 0 1px 0;
+        }
+        .press-images{
+            @include mixin.width(1440,940);
+            @include mixin.flex(space-between,center);
+            margin-bottom: 38px;
+        }
+    }
+
+    .sync-block{
+        @include mixin.width(1440,960);
+        @include mixin.flex(space-between,center);
+        flex-flow: column wrap;
+        margin-top: 69px;
+        .sync-title{
+            h1{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 29px;
+                line-height: 36px;
+                text-align: center;
+                color: #333333;
+                margin-bottom: 10px;
+            }
+            p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 19px;
+                line-height: 22px;
+                text-align: center;
+                color: #333333;
+                margin-bottom: 69px;
+            }
+        }
+        .web-app,.mob-app{
+            @include mixin.width(960,960);
+            @include mixin.flex(center,unset);
+            gap: 20px;
+            img{
+                overflow: inherit
+            }
+            &-text{
+                @include mixin.width(960,460);
+            }
+            h2{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 30px;
+                color: #333333;
+                margin: 11.5px 0 16.5px;
+            }
+            p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                color: #333333;
+                @include mixin.width(460,389);
+            }
+        }
+    }
+    .sync-blocks{
+        @include mixin.width(960,960);
+        @include mixin.flex(space-between,center);
+        margin: 70px 0;
+        div{
+            @include mixin.width(960,220);
+            @include mixin.flex(center,unset);
+            flex-flow: column wrap;
+            img{
+                max-width: 30px;
+                max-height: 30px;
+            }
+            h1{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 21px;
+                line-height: 30px;
+                color: #333333;
+                margin: 11px 0 17px;
+            }
+            p{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 22px;
+                color: #333333;
+            }
+        }
+    }
+    .pp-block{
+        @include mixin.flex(center,center);
+        flex-direction: column;
+        background: rgba(221, 231, 237, 1);
+        width: 100%;
+        padding: 69px 250px 71px;
+        h1{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 29px;
+            text-align: center;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        h2{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 19px;
+            text-align: center;
+            color: #333333; 
+        }
+        .pp-cards{
+            @include mixin.flex(center,center);
+            gap: 20px;
+            margin: 70px 0 19px;
+            .card{
+                background: rgba(255, 255, 255, 1);
+                padding: 16px 17px 17px 17px;
+                h1{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 22px;
+                    color: #2B2B2B;
+                    text-align: unset;
+                    margin-bottom: 18px;
+                }
+                h2{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #2B2B2B;
+                    margin: 0;
+                    text-align: unset;
+                    margin-bottom: 10px;
+                }
+                span{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 19px;
+                    color: #489FD9;
+                }
+                .mg{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    color: #489FD9;
+                    margin-bottom: 1px;
+                }
+                .line{
+                    background: #DBDBDB;
+                    border-radius: 0px;
+                    height: 1px;
+                    width: 93px;
+                    margin: 12px 0;
+                }
+                h3{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #2B2B2B;
+                    margin-bottom: 14px;
+                }
+                h4{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #C7C5C5;
+                    margin-bottom: 14px;
+                }
+                .proff{
+                    color: #2B2B2B;
+                }
+                .start{
+                    color: #2B2B2B;
+                }
+                .bus{
+                    color: #2B2B2B;
+                }
+                h5{
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 13px;
+                    color: #C7C5C5;
+                }
+                button{
+                    background: #000000;
+                    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
+                    border-radius: 3px;
+                    padding: 9px 44px 11px 45px;
+                    font-family: 'Roboto Slab';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    margin-top: 19px;
+                }
+            }
+        }
+        h6{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            color: #333333;
+        }
+        span{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            text-align: center;
+            color: #489FD9;
+        }
+    }
+    .chel{
+        @include mixin.flex(center,center);
+        flex-flow: column wrap;
+        margin: 70px 0;
+        padding: 0 94px;
+        h1{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 29px;
+            text-align: center;
+            color: #333333;
+        }
+        h2{
+            @include mixin.width(1440,752);
+            font-family: 'Roboto Slab';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            text-align: center;
+            color: #333333;
+            margin: 45px 0 22px;
+        }
+        img{
+            width: 70px;
+            height: 70px;
+        }
+        h5{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            text-align: center;
+            color: #333333;
+            margin-top: 12px;
+        }
+        h6{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            text-align: center;
+            color: #333333;
+        }
+    }
+    .logos{
+        background: rgba(161, 191, 212, 1);
+        @include mixin.flex(center,center);
+        height: 156px;
+        width: 100%;
+        overflow: hidden;
+        .logo{
+            display: flex;
+        }
+    }
+}
